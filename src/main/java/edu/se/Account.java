@@ -1,12 +1,18 @@
 package edu.se;
 
 public class Account {
-  int accountNumber = 0;
-  static int accountsCreated = 0;
-  
-  public Account(){
-    accountsCreated++;
-    accountNumber += accountsCreated;
+
+  public enum AccountType {
+    CHECKING, SAVINGS
   }
 
+  public AccountType type;
+
+  public AccountType getType() {
+    return type;
+  }
+
+  public void setType(AccountType type) {
+    this.type = type;
+  }
 }
