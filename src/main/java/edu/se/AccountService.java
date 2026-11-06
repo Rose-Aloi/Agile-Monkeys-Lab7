@@ -1,7 +1,10 @@
 package edu.se;
 public class AccountService {
-    Account createAccount(String accountType, String holderName, double balance){
-        return new Account(accountType, holderName, balance);
+    Account createAccount(accountType type, String holderName, double balance){
+        return new Account(type, holderName, balance);
+    }
+    void updateAccount(Account changingAccount, accountType type, String holderName, double balance){
+        changingAccount = new Account(type, holderName, balance);
     }
 
 }
