@@ -1,25 +1,34 @@
 package edu.se;
 
 public class Account {
-
   public enum AccountType {
     CHECKING, SAVINGS
+  }
   int accountNumber = 0;
   static int accountsCreated = 0;
-  private String holderName;
-  private double balance;
+  double balance = 0;
+  String holderName;
+  AccountType type;
+  
   public Account(){
     accountsCreated++;
     accountNumber += accountsCreated;
+    balance = 0;
+    holderName = "";
+    type = AccountType.CHECKING;
   }
-
-  public AccountType type;
-
-  public AccountType getType() {
-    return type;
+  public Account(AccountType type, String name, double balance){
+      accountsCreated++;
+      accountNumber += accountsCreated;
+      this.balance = balance;
+      holderName = name;
+      this.type = type;
   }
+    public AccountType getType() {
+        return type;
+    }
 
-  public void setType(AccountType type) {
-    this.type = type;
-  }
+    public void setType(AccountType type) {
+        this.type = type;
+    }
 }
