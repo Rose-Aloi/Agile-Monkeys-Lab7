@@ -1,23 +1,27 @@
 package edu.se;
 
 public class Account {
+  public enum AccountType {
+    CHECKING, SAVINGS
+  }
   int accountNumber = 0;
   static int accountsCreated = 0;
   double balance = 0;
   String holderName;
-  accountType type;
+  AccountType type;
   
   public Account(){
     accountsCreated++;
     accountNumber += accountsCreated;
     balance = 0;
     holderName = "";
-    type = savings;
+    type = AccountType.CHECKING;
   }
-  public Account(accountType type, String name, double balance){
+  public Account(AccountType type, String name, double balance){
       accountsCreated++;
       accountNumber += accountsCreated;
       this.balance = balance;
+      holderName = name;
       this.type = type;
   }
 
