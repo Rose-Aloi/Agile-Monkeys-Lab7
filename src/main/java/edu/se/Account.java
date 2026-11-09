@@ -24,5 +24,11 @@ public class Account {
       holderName = name;
       this.type = type;
   }
+    public AccountType getType() {
+        return type;
+    }
 
+    public void setType(AccountType type) {
+        this.type = type;
+    }
 }
